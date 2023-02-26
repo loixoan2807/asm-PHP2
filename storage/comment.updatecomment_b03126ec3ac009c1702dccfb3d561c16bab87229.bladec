@@ -1,0 +1,45 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection("content"); ?>
+<main class="main">
+ <div class="container-fluid">
+ <div class="row">
+ <!-- main title -->
+ <div class="col-12">
+ <div class="main__title">
+ <h2>Update item</h2>
+ </div>
+ </div>
+ <!-- end main title -->
+
+ <!-- form -->
+ <div class="col-12">
+ <form action="" method="post" class="form">
+ <div class="row row--form">
+ <div class="col-12 col-md-7 form__content">
+ <div class="row row--form">
+ <div class="col-12">
+ <input type="text" class="form__input" placeholder="ID Người Dùng" name="id_ngdung" value="<?php echo \htmlentities($showUpdate['id_nguoidung']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <label style="color: #fff;"><?php echo \htmlentities(isset($err["id_ngdung"])?$err["id_ngdung"]:''??'', ENT_QUOTES, 'UTF-8', false); ?></label>
+ </div>
+
+ <div class="col-12">
+ <textarea id="text"  class="form__textarea" placeholder="Bình Luận" name="binh_luan" ><?php echo \htmlentities($showUpdate['binh_luan']??'', ENT_QUOTES, 'UTF-8', false); ?></textarea>
+ <label style="color: #fff;"><?php echo \htmlentities(isset($err["binh_luan"])?$err["binh_luan"]:''??'', ENT_QUOTES, 'UTF-8', false); ?></label>
+ </div>
+
+ 
+ <div class="col-12">
+ <div class="col-12">
+ <button name="btn-updatecomment" class="form__btn">Update</button>
+ </div>
+ </div>
+ </div>
+ </div>
+ </form>
+ </div>
+ <!-- end form -->
+ </div>
+ </div>
+</main>
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild("layout.main"); } ?>

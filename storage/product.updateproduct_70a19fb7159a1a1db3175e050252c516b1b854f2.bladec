@@ -1,0 +1,48 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection("content"); ?>
+<main class="main">
+ <div class="container-fluid">
+ <div class="row">
+ <!-- main title -->
+ <div class="col-12">
+ <div class="main__title">
+ <h2>Update item</h2>
+ </div>
+ </div>
+ <!-- end main title -->
+
+ <!-- form -->
+ <div class="col-12">
+ <form action="" method="post" class="form">
+ <div class="row row--form">
+ <div class="col-12 col-md-7 form__content">
+ <div class="row row--form">
+ <div class="col-12">
+ <input type="text" class="form__input" placeholder="Đơn Giá" name="dongia_product" value="<?php echo \htmlentities($showUpdate['dongia']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <label style="color: #fff;"><?php echo \htmlentities(isset($err["dongia"])?$err["dongia"]:''??'', ENT_QUOTES, 'UTF-8', false); ?></label>
+ </div>
+
+ <div class="col-12">
+ <textarea id="text"  class="form__textarea" placeholder="Tên Sản Phẩm" name="name_product" ><?php echo \htmlentities($showUpdate['name']??'', ENT_QUOTES, 'UTF-8', false); ?></textarea>
+ <label style="color: #fff;"><?php echo \htmlentities(isset($err["name"])?$err["name"]:''??'', ENT_QUOTES, 'UTF-8', false); ?></label>
+ </div>
+
+ <div class="col-12 col-sm-6 col-lg-3">
+ <input type="text" class="form__input" placeholder="Parent ID" name="parent_id" value="<?php echo \htmlentities($showUpdate['parent_id']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <label style="color: #fff;"><?php echo \htmlentities(isset($err["parent_id"])?$err["parent_id"]:''??'', ENT_QUOTES, 'UTF-8', false); ?></label>
+ </div>
+ <div class="col-12">
+ <div class="col-12">
+ <button name="btn-updateproduct" class="form__btn">Update</button>
+ </div>
+ </div>
+ </div>
+ </div>
+ </form>
+ </div>
+ <!-- end form -->
+ </div>
+ </div>
+</main>
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild("layout.main"); } ?>

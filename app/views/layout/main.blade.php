@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from hotflix.volkovdesign.com/admin/img/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Feb 2023 10:29:07 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- CSS -->
+    @include('layout.css')
+	<!-- Favicons -->
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="Dmitry Volkov">
+	<script src="https://code.jquery.com/jquery-latest.js"></script>
+	<title>HotFlix – Online Movies, TV Shows & Cinema HTML Template</title>
+
+</head>
+<body>
+	<!-- header -->
+	<header class="header">
+		<div class="header__content">
+			<!-- header logo -->
+			<a href="./dashboard" class="header__logo">
+				<img src="{{BASE_URL.'public/hotflix.volkovdesign.com/admin/img/logo.svg'}}" alt="">
+			</a>
+			<!-- end header logo -->
+
+			<!-- header menu btn -->
+			<button class="header__btn" type="button">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<!-- end header menu btn -->
+		</div>
+	</header>
+	<!-- end header -->
+
+	<!-- sidebar -->
+	<div class="sidebar">
+		<!-- sidebar logo -->
+		<a href="./dashboard" class="sidebar__logo">
+			<img src="{{BASE_URL.'public/hotflix.volkovdesign.com/admin/img/logo.svg'}}" alt="">
+		</a>
+		<!-- end sidebar logo -->
+		
+		<!-- sidebar user -->
+		<div class="sidebar__user">
+			<div class="sidebar__user-img">
+				<img src="{{BASE_URL.'public/hotflix.volkovdesign.com/admin/img/user.svg'}}" alt="">
+			</div>
+
+			<div class="sidebar__user-title">
+				<span>Xin Chào</span>
+				<p>{{$_SESSION["username"]}}</p>
+			</div>
+
+			<button onclick="location.href='./log-out'" class="sidebar__user-btn" type="button">
+				<i class="icon ion-ios-log-out"></i>
+			</button>
+		</div>
+		<!-- end sidebar user -->
+
+		<!-- sidebar nav -->
+		<div class="sidebar__nav-wrap">
+			<ul class="sidebar__nav">
+				<li class="sidebar__nav-item">
+					<a href="./dashboard" class="sidebar__nav-link sidebar__nav-link--active"><i class="icon ion-ios-keypad"></i> <span>Dashboard</span></a>
+				</li>
+
+				<li class="sidebar__nav-item">
+					<a href="./product" class="sidebar__nav-link"><i class="icon ion-ios-film"></i> <span>Quản Lý Product</span></a>
+				</li>
+				
+				<!-- collapse -->
+				<li class="sidebar__nav-item">
+				<a href="./cart" class="sidebar__nav-link"><i class="icon ion-ios-copy"></i> <span>Quản Lý Giỏ Hàng</span></a>
+					
+				</li>
+				<!-- end collapse -->
+
+				<li class="sidebar__nav-item">
+					<a href="./user" class="sidebar__nav-link"><i class="icon ion-ios-contacts"></i> <span>Quản Lý User</span></a>
+				</li>
+
+				<li class="sidebar__nav-item">
+					<a href="./comment" class="sidebar__nav-link"><i class="icon ion-ios-chatbubbles"></i> <span>Quản Lý Bình Luận</span></a>
+				</li>
+
+				<li class="sidebar__nav-item">
+					<a href="./cate-product" class="sidebar__nav-link"><i class="icon ion-ios-star-half"></i> <span>Quản Lý Danh Mục</span></a>
+				</li>
+
+				<li class="sidebar__nav-item">
+					<a href="http://hotflix.volkovdesign.com/main/index.html" class="sidebar__nav-link"><i class="icon ion-ios-arrow-round-back"></i> <span>Back to HotFlix</span></a>
+				</li>
+			</ul>
+		</div>
+		<!-- end sidebar nav -->
+		
+		<!-- sidebar copyright -->
+		<div class="sidebar__copyright">© HOTFLIX, 2019—2021. <br>Create by <a href="https://themeforest.net/user/dmitryvolkov/portfolio" target="_blank">Dmitry Volkov</a></div>
+		<!-- end sidebar copyright -->
+	</div>
+	<!-- end sidebar -->
+
+	<!-- main content -->
+    @yield('content')
+	<!-- end main content -->
+    @include('layout.js')
+	<!-- JS -->
+	
+</body>
+
+<!-- Mirrored from hotflix.volkovdesign.com/admin/img/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Feb 2023 10:29:16 GMT -->
+</html>
