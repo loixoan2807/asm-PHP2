@@ -6,7 +6,8 @@ require_once("commom/route.php");
 ?>
 <script>
     const mess="<?= isset($_COOKIE["success"])?$_COOKIE["success"]:"" ?>";
-    if(mess!=""){
+    if(mess!==""){
         alert(mess);
     }
+
 </script>

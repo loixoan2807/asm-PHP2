@@ -17,6 +17,8 @@ class CommentController extends BaseController
         $products = $this->comment->showComment();
         $this->render("comment.comment", compact("products"));
     }
+
+
     public function addComment()
     {
         $err = [];

@@ -1,10 +1,6 @@
 {
     "name": "loi/hoa",
-    "autoload": {
-        "psr-4": {
-            "Loi\\Hoa\\": "src/"
-        }
-    },
+
     "authors": [
         {
             "name": "loixoan2807",

@@ -37,7 +37,14 @@ class ProductController extends BaseController
                             setcookie("email", $_POST["email"], time() + 86400, '/');
                             setcookie("pass", $_POST["password"], time() + 86400, '/');
                         }
-                        route("dashboard");
+                        if($value['role']==0){
+                            route("dashboard");
+                        }
+                        else{
+                            echo "Đây là trang Client";
+                            die();
+                        }
+
                     } else {
                         echo "<script>alert('Dữ liệu nhập k chính xác')</script>";
                     }
@@ -45,6 +52,25 @@ class ProductController extends BaseController
             }
         }
         $this->render("product.signin", compact("err"));
+    }
+    public function signup(){
+        $err = [];
+        if(isset($_POST['btn-signup'])){
+            if (empty($_POST['username'])) {
+                $err["name"] = "Bạn chưa nhập Name";
+            }
+            if (empty($_POST['email'])) {
+                $err["email"] = "Bạn chưa nhập Email";
+            }
+            if (empty($_POST['password'])) {
+                $err["password"] = "Bạn chưa nhập Password";
+            }
+            else{
+                $this->product->signup($_POST['username'],$_POST['email'],$_POST['password']);
+                redirect('success','Đăng ký thành công','');
+            }
+        }
+         $this->render('product.signup',compact('err'));
     }
     public function dashboard()
 

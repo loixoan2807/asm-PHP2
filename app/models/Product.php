@@ -28,6 +28,13 @@ class Product extends BaseModel{
         $sql="SELECT * FROM $this->showProduct WHERE id='$id'";
         return $this->getData($sql,false);
     }
+    public function signup($name,$email,$password){
+        $sql="INSERT INTO $this->login VALUES('','$name','$email','$password','1')";//Form đăng ký chỉ có người dùng bên client đăng ký thì mặc định sẽ để role thành 1
+//        $this->setQuery($sql);
+//        return $this->execute();
+        return $this->getData($sql);
+    }
+
     public function searchKeyProduct($keyword){
         $sql="SELECT * FROM $this->showProduct WHERE name LIKE '%$keyword%' OR id LIKE '$keyword' or dongia LIKE '$keyword' or parent_id LIKE '$keyword'";
         return $this->getData($sql);
